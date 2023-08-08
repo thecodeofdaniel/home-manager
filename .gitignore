@@ -1,0 +1,6 @@
+# Ignore result dir
+result
+
+# Ignore test files
+*test.sh
+*test.py
