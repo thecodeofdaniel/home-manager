@@ -6,7 +6,6 @@ pkgs=(
     "trash-cli"
     "tree"
     "xsel"
-    "zoxide"
 )
 
 for pkg in "${pkgs[@]}"; do

@@ -32,6 +32,7 @@ home-manager build
 if ! [ -L "result" ]; then
     exit 1
 else
+    bash ./scripts/install_pkgs.sh
     $HM/result/activate
 fi
 
