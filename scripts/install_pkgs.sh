@@ -2,7 +2,6 @@
 
 pkgs=(
     "bat"
-    "fzf"
     "trash-cli"
     "tree"
     "xsel"
