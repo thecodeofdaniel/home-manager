@@ -41,6 +41,7 @@ in
   programs.git = import ./programs/git.nix;
   programs.tmux = import ./programs/tmux.nix pkgs;
   programs.vscode = import ./programs/vscode/vscode.nix pkgs;
+  # programs.zsh = import ./programs/zsh/zsh.nix { inherit config; };
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
