@@ -28,7 +28,7 @@ files=(
     # VSCode files
     "$HOME/.config/Code/User/keybindings.json"
     "$HOME/.config/Code/User/settings.json"
-    "$HOME/.zshrc"
+    # "$HOME/.zshrc"
 )
 
 # Turn the symlinks into regular files
