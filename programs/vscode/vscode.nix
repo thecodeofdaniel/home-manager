@@ -47,11 +47,14 @@
     "files.autoSave" = "afterDelay";
     "files.autoSaveDelay" = 1000;
     "leetcode.defaultLanguage" = "python3";
+    "leetcode.hint.commentDescription" = false;
+    "leetcode.hint.configWebviewMarkdown" = false;
+    "leetcode.showDescription" = "None";
     "leetcode.workspaceFolder" = "/home/user/Desktop/LeetCode";
+    "liveServer.settings.donotShowInfoMsg" = true;
     "terminal.integrated.inheritEnv" = false;
     "workbench.iconTheme" = "material-icon-theme";
     "workbench.activityBar.visible" =  false;
-    "liveServer.settings.donotShowInfoMsg" = true;
   };
 
   keybindings = [
