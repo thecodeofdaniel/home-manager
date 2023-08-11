@@ -71,6 +71,12 @@ pkgs: {
     bind _ split-window -v
     bind _ split-window -v -c "#{pane_current_path}"
 
+    # Open new windows in current pane path
+    bind c new-window -c "#{pane_current_path}"
+
+    # Open new session with 0, opening in the current pane path
+    bind 0 new-session -c "#{pane_current_path}"
+
     # Resize panes with vim-keys
     bind -r j resize-pane -D 1
     bind -r k resize-pane -U 1
