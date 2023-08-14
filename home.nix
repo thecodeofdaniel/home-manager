@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, unstable, ... }:
 
 let
   HM-dir = "/home/${config.home.username}/.config/home-manager";
@@ -25,9 +25,9 @@ in
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = with pkgs; [
-    fzf
-    zoxide
+  home.packages = [
+    pkgs.fzf
+    pkgs.zoxide
 
     (pkgs.nerdfonts.override { fonts = [ "Meslo" ]; })
 
