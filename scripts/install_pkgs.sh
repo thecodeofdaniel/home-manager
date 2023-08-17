@@ -2,6 +2,7 @@
 
 pkgs=(
     "bat"
+    "bluez-tools"
     "trash-cli"
     "tree"
     "xsel"
