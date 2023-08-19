@@ -38,8 +38,11 @@ in
     (pkgs.writeShellScriptBin "link2file" ''source ${HM-dir}/scripts/link2file.sh'')
   ];
 
+
   programs.git = import ./programs/git.nix;
   programs.tmux = import ./programs/tmux.nix pkgs;
+  programs.urxvt = import ./programs/urxvt.nix;
+  
   programs.vscode = import ./programs/vscode/vscode.nix pkgs;
   # programs.zsh = import ./programs/zsh/zsh.nix { inherit config; };
 
