@@ -41,8 +41,8 @@ in
 
   programs.git = import ./programs/git.nix;
   programs.tmux = import ./programs/tmux.nix pkgs;
-  programs.urxvt = import ./programs/urxvt.nix;
-  
+  programs.urxvt = import ./programs/urxvt.nix { inherit config pkgs; };
+
   programs.vscode = import ./programs/vscode/vscode.nix pkgs;
   # programs.zsh = import ./programs/zsh/zsh.nix { inherit config; };
 

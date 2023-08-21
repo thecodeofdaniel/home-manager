@@ -1,23 +1,21 @@
+{ config, pkgs, ... }:
+
 {
   enable = true;
 
   fonts = [
-    "xft:MesloLGS Nerd Font:size=16"
+    "xft:MesloLGS Nerd Font:size=14"
   ];
 
   extraConfig = {
-    depth = 32;
-
     # special
+    background = "[70]#000000";
     foreground = "#d6deeb";
-    background = "rgba:0000/0000/0000/BFFF";
     cursorColor = "#d6deeb";
 
     # black
-    # color0 = " #011627";
-    # color8 = "#575656";
-    color0 = "#000000";
-    color8 = "#000000";
+    color0 = "#011627";
+    color8 = "#575656";
 
     # red
     color1 = "#ef5350";
@@ -46,5 +44,19 @@
     # white
     color7 = "#ffffff";
     color15 = "#ffffff";
+
+    # "perl-ext-common" = "default,resize-font";
+    # "perl-lib" = "${config.home.profileDirectory}/lib/urxvt/perl";
   };
+
+  # scroll = {
+  #   bar = {
+  #     enable = false;
+  #     align = "top";
+  #     floating = false;
+  #   };
+  # };
+
+  # transparent = true;
+  # shading = 199;
 }
