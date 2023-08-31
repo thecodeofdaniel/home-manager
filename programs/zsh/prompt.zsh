@@ -2,8 +2,17 @@ zsh_dir="/home/user/.config/home-manager/programs/zsh";
 
 alias src="source ~/.zshrc"
 
-source ${zsh_dir}/settings.zsh
-source ${zsh_dir}/aliases.zsh
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word
+
+# source ${zsh_dir}/settings.zsh
+# source ${zsh_dir}/aliases.zsh
+
+# ALLOW FZF WITH: <CTRL> + R
+if [ -n "${commands[fzf-share]}" ]; then
+    source "$(fzf-share)/key-bindings.zsh"
+    source "$(fzf-share)/completion.zsh"
+fi
 
 # Theming variables for primary prompt
 # ZSH_THEME_GIT_PROMPT_PREFIX=""
