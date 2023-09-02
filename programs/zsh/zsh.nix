@@ -20,6 +20,7 @@ in
   };
 
   shellAliases = {
+    # System
     ".." = " cd ../";
     "..." = " cd ../../";
     "...." = " cd ../../../";
@@ -29,7 +30,18 @@ in
     ll = "ls -lAh";
     ls = "ls --color";
 
-    # Git aliases
+    # Packages installed through Nix
+    zz = "zi";
+
+    # Packages installed through package manager
+    bat = "batcat -p";
+    trm = "trash";
+
+    # Gnome desktop environment
+    gt = " nohup gnome-terminal . && rm nohup.out";
+    nt = " nohup nautilus . && rm nohup.out";
+
+    # Git
     ga = "git add";
     gb = "git branch";
     gc = "git checkout";
