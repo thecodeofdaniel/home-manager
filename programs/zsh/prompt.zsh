@@ -48,6 +48,15 @@ PROMPT=$'\n┏╸%B%~%b $(gitprompt)\n' \
 && PROMPT+='┗╸%U${CONDA_DEFAULT_ENV}%u%(!.%F{1}.%F{238})' \
 && PROMPT+='[%n@%M]%f%(!.#.$) '
 
+RST="\e[0m"
+BLD="\e[1m"
+DIM="\e[2m"
+ULN="\e[4m"
+RED="\e[31m"
+GRN="\e[32m"
+YLW="\e[33m"
+BLU="\e[34m"
+
 function gacm
 {
     # Check if two arugments is passed in
