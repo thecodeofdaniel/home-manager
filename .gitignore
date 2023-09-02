@@ -4,3 +4,6 @@ result
 # Ignore test files
 *test.sh
 *test.py
+
+# Ignore the modes file for zsh
+programs/zsh/modes.zsh
