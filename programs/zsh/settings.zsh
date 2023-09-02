@@ -1,33 +1,9 @@
-# source $zsh_vars
-
-# Where and how big the history file should be
-HISTFILE="$zsh_hist"
-HISTSIZE=10000
-SAVEHIST=10000
-
-# Ignores commands with a space in the beginning for shell session and history file
-setopt HIST_IGNORE_SPACE
-
-# Allows for more precise history search
-autoload -U history-search-end
-zle -N history-beginning-search-backward-end history-search-end
-zle -N history-beginning-search-forward-end history-search-end
-
-# Enable <up/down arrow> keys for history
-# Find the keycode by using: <Ctrl> + V, then enter desired key
-bindkey "^[OA" history-beginning-search-backward-end
-bindkey "^[OB" history-beginning-search-forward-end
-
 # Enable the <Ctrl> + <left/right arrow> key for navigating
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 
 # Enable <Ctrl> + <Backspace> for deleting a word
 bindkey '^H' backward-kill-word
-
-# Auto tab complete:
-autoload -Uz compinit && compinit
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
 # Alias for allowing 256 colors
 c="38;5;"

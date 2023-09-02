@@ -2,6 +2,8 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
 zsh_dir="/home/user/.config/home-manager/programs/zsh";
 
+source "$zsh_dir/settings.zsh"
+
 alias src="source ~/.zshrc"
 
 # ALLOW FZF WITH: <CTRL> + R
