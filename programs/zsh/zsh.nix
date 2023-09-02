@@ -6,14 +6,17 @@ in
 {
   enable = true;
 
+  enableAutosuggestions = true;
+
   history = {
     expireDuplicatesFirst = true;
-    # ignoreAllDups = true;
     path = "$HOME/.zsh_history";
   };
 
   historySubstringSearch = {
     enable = true;
+    searchUpKey = [ "^[[A" "^[OA" ];
+    searchDownKey = [ "^[[B" "^[OB" ];
   };
 
   shellAliases = {
@@ -25,6 +28,20 @@ in
     l = "ll | awk '{ print \$1,\$9 }' | sed '/total/d'";
     ll = "ls -lAh";
     ls = "ls --color";
+
+    # Git aliases
+    ga = "git add";
+    gb = "git branch";
+    gc = "git checkout";
+    gcm = "git commit";
+    gcma = "git commit --amend";
+    gd = "git diff";
+    gf = "git fetch";
+    gl=''git log --graph --oneline --pretty=format:"%C(yellow)%h%C(reset) %C(yellow)(%C(auto)%D%C(yellow))%C(reset)%n%s [%C(dim)%an%C(reset)]%n"'';
+    gll = "git log --graph";
+    gres = "git restore --staged";
+    gs = "git status -s";
+    gst = "git status";
   };
 
   zplug = {
