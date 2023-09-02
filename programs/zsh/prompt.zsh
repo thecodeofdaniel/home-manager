@@ -157,3 +157,5 @@ export gcAt
 export gclone
 export grs
 export grH
+
+source "$zsh_dir/modes.zsh"

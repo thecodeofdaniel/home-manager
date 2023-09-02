@@ -2,6 +2,7 @@
 
 let
   zsh_dir = "/home/${config.home.username}/.config/home-manager/programs/zsh";
+  zshrc = "/home/${config.home.username}/.zshrc";
 in
 {
   enable = true;
@@ -29,6 +30,9 @@ in
     l = "ll | awk '{ print \$1,\$9 }' | sed '/total/d'";
     ll = "ls -lAh";
     ls = "ls --color";
+
+    # Scripts
+    modes = "python3 ${zsh_dir}/set_modes.py ${zsh_dir}/modes.zsh";
 
     # Packages installed through Nix
     zz = "zi";
