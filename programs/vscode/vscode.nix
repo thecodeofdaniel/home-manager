@@ -46,7 +46,7 @@
     "explorer.confirmDragAndDrop" = false;
     "files.autoSave" = "afterDelay";
     "files.autoSaveDelay" = 1000;
-    "keyboard.dispatch" = "keycode";
+    "keyboard.dispatch" = "keyCode";
     "leetcode.defaultLanguage" = "python3";
     "leetcode.hint.commentDescription" = false;
     "leetcode.hint.configWebviewMarkdown" = false;
