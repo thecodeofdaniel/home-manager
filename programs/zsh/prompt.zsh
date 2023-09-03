@@ -59,7 +59,9 @@ GRN="\e[32m"
 YLW="\e[33m"
 BLU="\e[34m"
 
-gl=''git log --graph --oneline --pretty=format:"%C(yellow)%h%C(reset) %C(yellow)(%C(auto)%D%C(yellow))%C(reset)%n%s [%C(dim)%an%C(reset)]%n"'';
+alias gl='git log --graph --oneline --pretty=format:"\
+%C(yellow)%h%C(reset) %C(auto)%D%C(reset)%n\
+%s [%C(dim)%an%C(reset)]%n"'
 
 function gacm
 {
