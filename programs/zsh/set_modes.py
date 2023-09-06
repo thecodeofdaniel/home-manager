@@ -50,14 +50,9 @@ def deactivate_mode(name: str):
 
 
 def activate_mode(name: str, content: str):
-    if name == "none":
-        print("Set to default prompt")
-        with open(MODES_FILE_PATH, 'w') as file:
-            file.write("")
-    else:
-        print(f"{name} is now activated")
-        with open(MODES_FILE_PATH, 'a') as file:
-            file.write(f"# {name.upper()}\nsource $zsh_dir/modes/{content}\n")
+    print(f"{name} is now activated")
+    with open(MODES_FILE_PATH, 'a') as file:
+        file.write(f"# {name.upper()}\nsource $zsh_dir/modes/{content}\n")
 
 
 def activate_modes(*args: str):
@@ -66,23 +61,21 @@ def activate_modes(*args: str):
     Activating or deactiving the mode if the mode exists
     """
     for arg in args:
-        if arg in modes:
+        if arg in mode_to_path:
             if is_mode_activated(f"{arg.upper()}"):
                 print(f"{arg} is already activated")
             else:
-                activate_mode(arg, modes[arg])
-        elif arg == "none":
-            activate_mode("none", "")
+                activate_mode(arg, mode_to_path[arg])
         else:
-            if arg[0] == REMOVE_CHAR and arg[1:] in modes:
+            if arg[0] == REMOVE_CHAR and arg[1:] in mode_to_path:
                 deactivate_mode(arg[1:])
 
 
 
 # The modes available and there where they're located in plugins dir
-modes={
-    "conda": "conda.zsh",
-    "nvm": "nvm.zsh",
+mode_to_path={
+    "conda": "./conda.zsh",
+    "nvm": "./nvm.zsh",
 }
 
 
