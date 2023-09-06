@@ -4,14 +4,14 @@ from os import system
 
 # if the mode has an underscore in front
 # the script will remove the mode
-REMOVE_CHAR = '_'
+SIGNAL = '_'
 
 
 def is_mode_activated(target_str: str) -> bool:
     try:
         with open(MODES_FILE_PATH, 'r') as file:
             content = file.read()
-            if target_str in content:
+            if target_str.upper() in content:
                 return True
             else:
                 return False
@@ -33,8 +33,8 @@ def get_line(search_str: str) -> int:
     return None
 
 
-def deactivate_mode(name: str):
-    line_num = get_line(f"{name.upper()}")
+def deactivate_mode(mode: str):
+    line_num = get_line(f"{mode.upper()}")
 
     if line_num is not None:
         with open(MODES_FILE_PATH, 'r') as file:
@@ -49,10 +49,10 @@ def deactivate_mode(name: str):
             file.writelines(filtered_lines)
 
 
-def activate_mode(name: str, content: str):
-    print(f"{name} is now activated")
+def activate_mode(mode: str):
     with open(MODES_FILE_PATH, 'a') as file:
-        file.write(f"# {name.upper()}\nsource $zsh_dir/modes/{content}\n")
+        file.write(f"# {mode.upper()}\nsource $zsh_dir/modes/{mode_to_path[mode]}\n")
+        print(f"{mode} is now activated")
 
 
 def activate_modes(*args: str):
@@ -62,24 +62,24 @@ def activate_modes(*args: str):
     """
     for arg in args:
         if arg in mode_to_path:
-            if is_mode_activated(f"{arg.upper()}"):
+            if is_mode_activated(arg):
                 print(f"{arg} is already activated")
             else:
-                activate_mode(arg, mode_to_path[arg])
+                activate_mode(arg)
         else:
-            if arg[0] == REMOVE_CHAR and arg[1:] in mode_to_path:
+            if arg[0] == SIGNAL and arg[1:] in mode_to_path:
                 deactivate_mode(arg[1:])
 
 
 
-# The modes available and there where they're located in plugins dir
+# The modes available and there where they're located in modes dir
 mode_to_path={
     "conda": "./conda.zsh",
     "nvm": "./nvm.zsh",
 }
 
 
-# The first argument will be passed by default in command (~/.zshrc)
+# The first argument will be passed by the command (~/.zshrc)
 MODES_FILE_PATH = argv[1]
 
 # Every other argument after that will be a mode declared by the user
