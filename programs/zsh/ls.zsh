@@ -1,10 +1,3 @@
-# Enable the <Ctrl> + <left/right arrow> key for navigating
-bindkey "^[[1;5C" forward-word
-bindkey "^[[1;5D" backward-word
-
-# Enable <Ctrl> + <Backspace> for deleting a word
-bindkey '^H' backward-kill-word
-
 # Alias for allowing 256 colors
 c="38;5;"
 # Coloring output for "ls" command

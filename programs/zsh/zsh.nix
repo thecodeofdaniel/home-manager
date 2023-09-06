@@ -7,6 +7,8 @@ in
 {
   enable = true;
 
+  # dotDir = ".";
+
   enableAutosuggestions = true;
 
   history = {
@@ -53,7 +55,6 @@ in
     gcma = "git commit --amend";
     gd = "git diff";
     gf = "git fetch";
-    # gl=''git log --graph --oneline --pretty=format:"%C(yellow)%h%C(reset) %C(yellow)(%C(auto)%D%C(yellow))%C(reset)%n%s [%C(dim)%an%C(reset)]%n"'';
     gll = "git log --graph";
     gres = "git restore --staged";
     gs = "git status -s";
@@ -68,5 +69,5 @@ in
     ];
   };
 
-  initExtra = builtins.readFile ./prompt.zsh;
+  initExtra = builtins.readFile ./extra.zsh;
 }

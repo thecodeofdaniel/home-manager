@@ -1,10 +1,17 @@
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
-
 zsh_dir="/home/user/.config/home-manager/programs/zsh";
 
-source "$zsh_dir/settings.zsh"
+# For autocompletion even if character is lowercase
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
-alias src="source ~/.zshrc"
+# Enable the <Ctrl> + <left/right arrow> key for navigating
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word
+
+# Enable <Ctrl> + <Backspace> for deleting a word
+bindkey '^H' backward-kill-word
+
+# Source colors for ls command
+source "$zsh_dir/ls.zsh"
 
 # ALLOW FZF WITH: <CTRL> + R
 if [ -n "${commands[fzf-share]}" ]; then
@@ -58,6 +65,9 @@ RED="\e[31m"
 GRN="\e[32m"
 YLW="\e[33m"
 BLU="\e[34m"
+
+# Creata alias for sourcing .zshrc
+alias src="source $ZDOTDIR/.zshrc"
 
 alias gl='git log --graph --oneline --pretty=format:"\
 %C(yellow)%h%C(reset) %C(auto)%D%C(reset)%n\
