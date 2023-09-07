@@ -7,7 +7,7 @@ in
 {
   enable = true;
 
-  # dotDir = ".";
+  dotDir = "."; # zshrc will be in the home directory
 
   enableAutosuggestions = true;
 
