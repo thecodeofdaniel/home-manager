@@ -1,6 +1,5 @@
-# import sys
 from sys import argv
-from os import system
+import os
 
 # if the mode has an underscore in front
 # the script will remove the mode
@@ -87,4 +86,8 @@ if len(argv) > 2:
     args = argv[2:]
     activate_modes(*args)
 else:
-    system(f"cat {MODES_FILE_PATH}")
+    if os.path.exists(MODES_FILE_PATH):
+        os.system(f"cat {MODES_FILE_PATH}")
+    else:
+        with open(MODES_FILE_PATH, 'w') as file:
+            file.write("")
