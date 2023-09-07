@@ -172,4 +172,6 @@ export gclone
 export grs
 export grH
 
-source "$zsh_dir/modes.zsh"
+# Source the modes file
+FILE="$zsh_dir/modes.zsh"
+if test -f "$FILE"; then source "$FILE"; fi
