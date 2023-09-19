@@ -67,7 +67,7 @@ YLW="\e[33m"
 BLU="\e[34m"
 
 # Creata alias for sourcing .zshrc
-alias src="source $ZDOTDIR/.zshrc"
+alias src="source $HOME/.zshrc"
 
 alias gl='git log --graph --oneline --pretty=format:"\
 %C(yellow)%h%C(reset) %C(auto)%D%C(reset)%n\
