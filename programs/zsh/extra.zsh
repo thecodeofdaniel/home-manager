@@ -69,9 +69,8 @@ BLU="\e[34m"
 # Creata alias for sourcing .zshrc
 alias src="source $HOME/.zshrc"
 
-alias gl='git log --graph --oneline --pretty=format:"\
-%C(yellow)%h%C(reset) %C(auto)%D%C(reset)%n\
-%s [%C(dim)%an%C(reset)]%n"'
+# Git alias for git log
+alias gl="git log --pretty=format:\"%C(yellow)%h%C(auto)%d%n%C(reset)%s %C(dim)%C(ul)%cn%C(reset)%n\" --graph"
 
 function gacm
 {
