@@ -56,6 +56,7 @@
     "terminal.integrated.inheritEnv" = false;
     "workbench.iconTheme" = "material-icon-theme";
     "workbench.activityBar.visible" =  false;
+    "workbench.panel.defaultLocation" = "right";
   };
 
   keybindings = [
