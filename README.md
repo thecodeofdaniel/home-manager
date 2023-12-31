@@ -27,7 +27,7 @@
 - Run the following
 
     ```
-    nix run home-manager/release-23.05 -- init --switch
+    nix run home-manager/release-23.11 -- init --switch
     ```
 
     - If there is a error when installing. Try this fix and run the command above again

@@ -28,6 +28,7 @@ in
   home.packages = [
     pkgs.fzf
     pkgs.zoxide
+    pkgs.hugo
 
     (pkgs.nerdfonts.override { fonts = [ "Meslo" ]; })
 
