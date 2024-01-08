@@ -66,6 +66,7 @@ in
     plugins = [
       { name = "woefe/git-prompt.zsh"; }
       { name = "zsh-users/zsh-syntax-highlighting"; }
+      { name = "conda-incubator/conda-zsh-completion"; }
     ];
   };
 
